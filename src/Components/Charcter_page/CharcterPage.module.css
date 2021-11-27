@@ -1,0 +1,24 @@
+.character{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(110deg ,rgba(249, 213, 93, 1) 55%, transparent 45%), url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Images-Thor-Wallpapers-HD.jpg");
+}
+
+.character>div{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    transform: translate(-30%, -0%);
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 25vw;
+    height: 50vh;
+}
+
+.character>div>img{
+    width: 50%;
+    height: 70%;
+    margin-left:25%;
+    margin-top: 20px;
+    border-radius: 25px;
+}
