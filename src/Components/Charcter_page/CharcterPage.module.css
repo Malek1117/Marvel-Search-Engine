@@ -2,23 +2,47 @@
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(110deg ,rgba(249, 213, 93, 1) 55%, transparent 45%), url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Images-Thor-Wallpapers-HD.jpg");
+    background-size: 100%;
+    align-items: center;
+    display: flex;
 }
 
-.character>div{
-    position: absolute;
-    left: 20%;
-    top: 20%;
-    transform: translate(-30%, -0%);
+.detail{
     border: 1px solid black;
     border-radius: 25px;
     width: 25vw;
-    height: 50vh;
+    min-height: 50vh;
+    margin-left: 200px;
+    text-align: center;
 }
 
-.character>div>img{
+.detail>img{
     width: 50%;
-    height: 70%;
-    margin-left:25%;
+    /* margin-left:25%; */
     margin-top: 20px;
     border-radius: 25px;
+}
+
+.detail>p{
+    padding: 0px 50px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+}
+
+.detail>h1{
+    margin: 0px
+}
+
+.detail>button{
+    cursor: pointer;
+    background-color: black;
+    color: rgba(249, 213, 93, 1);
+    padding: 5px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 15px
 }

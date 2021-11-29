@@ -27,7 +27,6 @@ export default function Home (){
             const res = await axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${value}&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
         
             setResult(res.data.data.results);
-            console.log(res.data.data.results);
         } catch (e) {
             setResult([]);
             console.log(e);
@@ -41,15 +40,22 @@ export default function Home (){
         navigate("/character")
     }
 
+    const goToComics = ()=>{
+        navigate("/comics_page")
+    }
+
     return( 
-        <div className={styles.container}>
-            <img src="/images/marvel_logo.svg" alt=""/>
-            <div className={styles.main}>
-                <input className={styles.input} type="text" placeholder="Search here...." onChange={e=>optimizedFn(e.target.value)} />
-                <div className={styles.results}>
-                    {result.map((e, i)=><p onClick={()=>goToChar(e)} key={i}>{e.name}</p>)}
+        <>
+            <div className={styles.container}>
+                <img src="/images/marvel_logo.svg" alt=""/>
+                <div className={styles.main}>
+                    <input className={styles.input} type="text" placeholder="Search here...." onChange={e=>optimizedFn(e.target.value)} />
+                    <div className={styles.results}>
+                        {result.map((e, i)=><p onClick={()=>goToChar(e)} key={i}>{e.name}</p>)}
+                    </div>
                 </div>
             </div>
-        </div>
+            <button onClick={goToComics}>Comics Page{`>>>>`}</button>
+        </>
     )
 }

@@ -1,0 +1,109 @@
+.main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(110deg ,rgba(249, 213, 93, 1) 55%, rgba(0,0,0,1) 45%);
+    background-size: 100%;
+}
+
+.comics{
+    width: 55%;
+}
+
+.comicsData{
+    width: 96%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 3%;
+    padding: 0% 2%;
+    margin-top: 30px;
+}
+
+.comicsData>div{
+    text-align: center;
+    cursor: pointer;
+}
+
+.comicsData>div>img{
+    border-radius: 15px;
+}
+
+.comicsData>div>img:hover{
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .2);
+    border: 2px solid black;
+}
+
+.comicsData>div>p{
+    font-family: bold;
+}
+
+.pages{
+    width: 29%;
+    margin: 30px auto;
+}
+
+.pages>span{
+    margin: 0px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 0px 7px;
+    border-radius: 25px;
+}
+
+.pages>button{
+    background-color: black;
+    color: rgb(236, 210, 124);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.main+button{
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    margin-left:45px;
+    background-color: black;
+    color: rgb(236, 210, 124);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.comicDetails{
+    display: flex;
+    align-items: center;    
+    width: 45%;   
+}
+
+.comicDetails>div{
+    margin:auto;
+    width: 65%;
+    margin-left:27%;
+    min-height: 600px;
+    border: 1px solid rgb(236, 210, 124);
+    background-color: rgba(223, 12, 12, 0.1);
+}
+
+.comicBox>h1{
+    color:rgb(236, 210, 124);
+    font-size: 20px;
+    text-align: center;
+}
+
+.comicBox>img{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 5px 5px rgba(236, 210, 124, 0.4);
+}
+
+.comicBox>p{
+    color:rgb(236, 210, 124);
+    text-align: center;
+    font-weight: bold;
+}
