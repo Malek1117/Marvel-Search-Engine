@@ -49,7 +49,7 @@ export default function Home (){
             <div className={styles.container}>
                 <img src="/images/marvel_logo.svg" alt=""/>
                 <div className={styles.main}>
-                    <input className={styles.input} type="text" placeholder="Search here...." onChange={e=>optimizedFn(e.target.value)} />
+                    <input className={styles.input} type="text" placeholder="Search charcter here...." onChange={e=>optimizedFn(e.target.value)} />
                     <div className={styles.results}>
                         {result.map((e, i)=><p onClick={()=>goToChar(e)} key={i}>{e.name}</p>)}
                     </div>
