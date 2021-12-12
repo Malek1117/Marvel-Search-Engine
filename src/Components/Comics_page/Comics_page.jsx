@@ -10,24 +10,21 @@ export default function ComicsPage(){
     const [comic, setComic] = useState({});
 
     useEffect(()=>{
+        const getData = async ()=>{
+            try{
+                const res = await axios.get(`http://gateway.marvel.com/v1/public/comics?limit=6&offset=${page*6}&dateDescriptor=thisMonth&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
+            
+                setData(res.data.data.results);
+    
+                console.log(res.data.data.results);
+            } catch (e) {
+                setData([]);
+                console.log(e);
+            }
+        }
         getData();
     },[page]);
 
-    const getData = async ()=>{
-        try{
-            if(data.length<0){
-                return false
-            }
-            const res = await axios.get(`http://gateway.marvel.com/v1/public/comics?limit=6&offset=${page*6}&dateDescriptor=thisMonth&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
-        
-            setData(res.data.data.results);
-
-            console.log(res.data.data.results);
-        } catch (e) {
-            setData([]);
-            console.log(e);
-        }
-    }
 
     const showComic = (e) => {
         setComic(e);
@@ -38,7 +35,7 @@ export default function ComicsPage(){
     }
 
     const goToHome = ()=>{
-        navigate("/")
+        navigate("/");
     };
 
     return (
@@ -47,12 +44,10 @@ export default function ComicsPage(){
                 <div className={styles.comics}>
                     <h1 style={{textAlign: 'center'}}>{"<"}----:Treading Comics:----{">"}</h1>
                     <div className={styles.comicsData}>
-                        {data.map((e, i)=><>
-                            <div key={i} onClick={()=>showComic(e)}>
-                                <img alt="" src={`${e.thumbnail.path}/landscape_medium.${e.thumbnail.extension}`}/>
-                                <p>{e.title}</p>
-                            </div>
-                        </>
+                        {data.map((e, i)=><div key={i} onClick={()=>showComic(e)}>
+                                            <img alt="" src={`${e.thumbnail.path}/landscape_medium.${e.thumbnail.extension}`}/>
+                                            <p>{e.title}</p>
+                                        </div> 
                         )}
                     </div>
                     <div className={styles.pages}>

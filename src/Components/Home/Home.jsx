@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import { useCallback, useState} from "react";
+import { useMemo, useState} from "react";
 import axios from "axios";
 import styles from "./Home.module.css";
 
@@ -27,13 +27,14 @@ export default function Home (){
             const res = await axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${value}&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
         
             setResult(res.data.data.results);
+            // console.log(res.data.data.results);
         } catch (e) {
             setResult([]);
             console.log(e);
         }
     }
 
-    const optimizedFn = useCallback(debounce(search), []);
+    const optimizedFn = useMemo(()=>debounce(search), []);
 
     const goToChar = (e)=>{
         localStorage.setItem('character', JSON.stringify(e));
