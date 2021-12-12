@@ -24,7 +24,7 @@ export default function Home (){
             if(value.length<0){
                 return false
             }
-            const res = await axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${value}&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
+            const res = await axios.get(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${value}&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
         
             setResult(res.data.data.results);
             // console.log(res.data.data.results);

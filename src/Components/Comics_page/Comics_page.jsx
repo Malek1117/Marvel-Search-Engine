@@ -12,7 +12,7 @@ export default function ComicsPage(){
     useEffect(()=>{
         const getData = async ()=>{
             try{
-                const res = await axios.get(`http://gateway.marvel.com/v1/public/comics?limit=6&offset=${page*6}&dateDescriptor=thisMonth&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
+                const res = await axios.get(`https://gateway.marvel.com/v1/public/comics?limit=6&offset=${page*6}&dateDescriptor=thisMonth&ts=1&apikey=d45881984c5721ff4ba120d309c0f29c&hash=453fadb137f79d2aa748b62007fd67ea`)
             
                 setData(res.data.data.results);
     
